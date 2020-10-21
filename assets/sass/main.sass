@@ -1,0 +1,222 @@
+@import "variables.sass"
+
+// Change Default Values
+html,body
+    outline: 0
+    padding: 0
+    margin: 0
+
+body
+  padding-top: 70px !important
+  &.disabled
+    overflow: hidden
+    &::after
+      content: ""
+      position: fixed
+      top: 0px
+      left: 0px
+      width: 100%
+      height: 100%
+      background: #000
+      z-index: 98
+      opacity: 0.4
+ul
+    margin: 0
+    padding: 0
+a
+    text-decoration: none
+*
+    box-sizing: border-box
+
+section
+    &.side-list
+        position: fixed
+        top: 60px
+        height: calc(100% - 60px)
+        background: #FFF
+        width: 350px
+        z-index: 99
+        box-shadow: 5px 0px 20px 0 rgba(0,0,0,0.1)
+        transition: left 0.3s
+        left: -100%
+        overflow: auto
+        @media screen and (max-width: 400px)
+            width: 90%
+        &.active
+            left: 0
+        .user-options
+            text-align: center
+            padding: 20px 0
+            display: none
+            @media screen and (max-width: 400px)
+                display: block
+            li
+                display: inline-block
+                margin: 0 10px
+                a
+                    display: inline-block
+                    line-height: 30px
+                    &:hover
+                        background: transparent
+                    img,svg
+                        vertical-align: middle
+                    i
+                        color: #333
+                        font-size: 20px
+                        vertical-align: middle
+                    svg
+                        &.fill
+                            path
+                                stroke: #333
+                    &.user
+                        img
+                            width: 35px
+                            height: 35px
+        .search
+            padding: 20px
+            label
+                background-color: #F4F4F4
+                line-height: 40px
+                display: inline-block
+                border-radius: 30px
+                padding: 0 10px
+                width: 100%
+                i
+                    vertical-align: middle
+                    color: $head_bg
+                input
+                    display: inline-block
+                    height: 40px
+                    line-height: 40px
+                    outline: 0
+                    border: 0
+                    border-radius: 30px
+                    font-family: $noto_regular
+                    background: #f4f4f4
+                    color: #555
+                    width: calc(100% - 30px)
+        ul
+            list-style-type: none
+            width: 100%
+            li
+                display: block
+                direction: rtl
+                text-align: right
+                a
+                    display: block
+                    line-height: 60px
+                    padding: 0 20px
+                    color: #333
+                    font-family: $noto_regular
+                    font-size: 14px
+                    transition: background 0.3s
+                    &:hover
+                        background: #f5f5f5
+                    img,svg
+                        vertical-align: middle
+                    svg
+                        &.fill
+                            path
+                                stroke: #333
+    &.header
+        direction: rtl
+        background-color: $head_bg
+        height: 60px
+        line-height: 60px
+        display: flex
+        padding: 0 20px
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        z-index: 99
+        .logo
+            flex-shrink: 0
+            @media screen and (max-width: 1040px)
+                flex-shrink: 1
+                width: 100%
+            img
+                height: 40px
+                vertical-align: middle
+        .search
+            flex-shrink: 0
+            padding: 0 20px
+            @media screen and (max-width: 1040px)
+                display: none
+            label
+                background-color: #FFF
+                line-height: 40px
+                display: inline-block
+                border-radius: 30px
+                padding: 0 10px
+                max-width: 200px
+                i
+                    vertical-align: middle
+                    color: $head_bg
+                input
+                    display: inline-block
+                    height: 40px
+                    line-height: 40px
+                    outline: 0
+                    border: 0
+                    border-radius: 30px
+                    font-family: $noto_regular
+                    color: #555
+                    width: calc(100% - 30px)
+        .list
+            width: 100%
+            @media screen and (max-width: 1040px)
+                display: none
+            ul
+                list-style-type: none
+                li
+                    margin-left: 20px
+                    display: inline-block
+                    &:last-child
+                        margin-left: 0
+                    a
+                        display: block
+                        line-height: 60px
+                        color: #FFF
+                        font-family: $noto_regular
+                        font-size: 14px
+                        img,svg
+                            vertical-align: middle
+                        svg
+                            &.fill
+                                path
+                                    stroke: #FFF
+        .user
+            flex-shrink: 0
+            li
+                display: inline-block
+                margin: 0 10px
+                &.menu-toggle
+                    display: none
+                    @media screen and (max-width: 1040px)
+                        display: inline-block
+                a
+                    display: inline-block
+                    line-height: 30px
+                    img,svg
+                        vertical-align: middle
+                    i
+                        color: #FFF
+                        font-size: 20px
+                        vertical-align: middle
+                    svg
+                        &.fill
+                            path
+                                stroke: #FFF
+                    &.user
+                        border: 2px #FFF solid
+                        border-radius: 50%
+                        width: 39px
+                        heigth: 35px
+                        img
+                            width: 35px
+                            height: 35px
+            @media screen and (max-width: 400px)
+                li
+                    &.hide-sm
+                        display: none

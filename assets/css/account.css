@@ -1,0 +1,337 @@
+@font-face {
+  font-family: "noto_regular";
+  src: url("../fonts/Noto_Kufi_Arabic_Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "noto_bold";
+  src: url("../fonts/Noto_Kufi_Arabic_Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.loadingContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2bbcb4;
+  z-index: 4;
+  animation-name: zoomin;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  display: none;
+}
+.loadingContainer::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.loadingContainer::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body {
+  background: #f5f5f5;
+}
+
+.account-page {
+  display: flex;
+  direction: rtl;
+  padding: 0 20px;
+}
+@media screen and (max-width: 900px) {
+  .account-page {
+    flex-direction: column;
+  }
+}
+.account-page .menu-small {
+  display: none;
+  background: #FFF;
+  border-radius: 10px;
+  padding: 10px 20px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 900px) {
+  .account-page .menu-small {
+    display: block;
+  }
+}
+.account-page .menu-small a {
+  display: block;
+  line-height: 50px;
+  font-family: "noto_regular";
+  color: #555;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+.account-page .menu-small a i {
+  font-size: 17px;
+  width: 40px;
+  background: #f9f9f9;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.account-page .menu-small a:hover {
+  color: #2cbdb4;
+}
+.account-page .menu-small a:hover i {
+  background: #2cbdb4;
+  color: #FFF;
+}
+.account-page .menu-container {
+  width: 300px;
+  flex-shrink: 0;
+  background: #FFF;
+  border-radius: 10px;
+  margin-left: 20px;
+  height: fit-content;
+  padding: 20px 0;
+}
+.account-page .menu-container a {
+  display: block;
+  line-height: 50px;
+  padding: 0 20px;
+  font-family: "noto_regular";
+  color: #555;
+  font-size: 15px;
+}
+.account-page .menu-container a i {
+  font-size: 17px;
+  width: 40px;
+  background: #f9f9f9;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.account-page .menu-container a:hover i {
+  background: #f1f1f1;
+}
+.account-page .menu-container a.active {
+  color: #2cbdb4;
+}
+.account-page .menu-container a.active i {
+  background: #2cbdb4;
+  color: #FFF;
+}
+.account-page .menu-container a.delete {
+  color: #F55050;
+}
+.account-page .menu-container a.delete.active i {
+  background: #F55050;
+  color: #FFF;
+}
+@media screen and (max-width: 900px) {
+  .account-page .menu-container {
+    position: fixed;
+    top: 70px;
+    visibility: hidden;
+    transition: 0.3s;
+    right: -100%;
+    opacity: 0;
+  }
+  .account-page .menu-container.active {
+    right: 20px;
+    visibility: visible;
+    z-index: 99;
+    opacity: 1;
+  }
+}
+.account-page .content-container {
+  width: 100%;
+  background: #FFF;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 300px;
+}
+.account-page .content-container.loading {
+  position: relative;
+}
+.account-page .content-container.loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: #FFF;
+  opacity: 0.8;
+  z-index: 2;
+}
+.account-page .content-container.loading .loadingContainer {
+  display: block;
+}
+.account-page .content-container .heading {
+  margin: 0;
+  margin-bottom: 20px;
+  font-family: "noto_bold";
+  font-size: 15px;
+  color: #333;
+}
+.account-page .content-container .avatar-control {
+  display: flex;
+}
+.account-page .content-container .avatar-control .preview {
+  flex-shrink: 0;
+}
+.account-page .content-container .avatar-control .preview img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.account-page .content-container .avatar-control .content {
+  width: 100%;
+  padding: 0 20px;
+  max-width: 500px;
+}
+.account-page .content-container .avatar-control .content p {
+  font-family: "noto_regular";
+  color: #555;
+  font-size: 13px;
+}
+
+.btn {
+  display: inline-block;
+  line-height: 40px;
+  padding: 0 20px;
+  font-family: "noto_regular";
+  font-size: 13px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  color: #333;
+}
+.btn i {
+  margin-left: 5px;
+  font-size: 15px;
+}
+.btn.primary {
+  background: #00BDB7;
+  color: #FFF;
+}
+.btn.red {
+  background: #F55050;
+  color: #FFF;
+}
+
+.form-container {
+  padding: 50px 0;
+}
+.form-container .inputs-container {
+  display: flex;
+  font-family: "noto_regular";
+}
+.form-container .inputs-container label {
+  width: 100%;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.form-container .inputs-container label:last-child {
+  margin-left: 0;
+}
+.form-container .inputs-container label .description {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+.form-container .inputs-container label input, .form-container .inputs-container label textarea {
+  width: 100%;
+  line-height: 40px;
+  border: 1px #DDD solid;
+  border-radius: 5px;
+  padding: 0 20px;
+  outline: 0;
+  font-family: "noto_regular";
+  font-size: 13px;
+}
+.form-container .inputs-container label input:focus, .form-container .inputs-container label textarea:focus {
+  border-color: #00BDB7;
+}
+.form-container .inputs-container label textarea {
+  resize: none;
+  line-height: normal;
+  height: 100px;
+  padding: 20px;
+}
+.form-container .buttons-container {
+  display: block;
+  text-align: center;
+}
+.form-container .buttons-container input, .form-container .buttons-container button, .form-container .buttons-container a {
+  display: inline-block;
+  line-height: 40px;
+  padding: 0 20px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+@keyframes zoomin {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.8) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+}
+.select2-container {
+  width: 100% !important;
+  font-family: "noto_bold";
+  font-size: 13px;
+}
+
+.select2-selection {
+  border: 1px #DDD solid !important;
+}
+
+.select2-container .select2-selection--single {
+  height: 42px !important;
+}
+.select2-container .select2-selection--single span {
+  line-height: 42px !important;
+  text-align: center !important;
+}
+
+.dropzone {
+  border: 2px #2cbeb4 dashed !important;
+  border-radius: 10px;
+  min-height: 100px !important;
+  background: #2cbeb71f !important;
+  font-family: "noto_bold";
+  font-size: 13px;
+}
+.dropzone svg {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+}
+
+/*# sourceMappingURL=account.css.map */

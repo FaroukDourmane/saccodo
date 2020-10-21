@@ -1,0 +1,295 @@
+@font-face {
+  font-family: "noto_regular";
+  src: url("../fonts/Noto_Kufi_Arabic_Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "noto_bold";
+  src: url("../fonts/Noto_Kufi_Arabic_Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+html, body {
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding-top: 70px !important;
+}
+body.disabled {
+  overflow: hidden;
+}
+body.disabled::after {
+  content: "";
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 98;
+  opacity: 0.4;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section.side-list {
+  position: fixed;
+  top: 60px;
+  height: calc(100% - 60px);
+  background: #FFF;
+  width: 350px;
+  z-index: 99;
+  box-shadow: 5px 0px 20px 0 rgba(0, 0, 0, 0.1);
+  transition: left 0.3s;
+  left: -100%;
+  overflow: auto;
+}
+@media screen and (max-width: 400px) {
+  section.side-list {
+    width: 90%;
+  }
+}
+section.side-list.active {
+  left: 0;
+}
+section.side-list .user-options {
+  text-align: center;
+  padding: 20px 0;
+  display: none;
+}
+@media screen and (max-width: 400px) {
+  section.side-list .user-options {
+    display: block;
+  }
+}
+section.side-list .user-options li {
+  display: inline-block;
+  margin: 0 10px;
+}
+section.side-list .user-options li a {
+  display: inline-block;
+  line-height: 30px;
+}
+section.side-list .user-options li a:hover {
+  background: transparent;
+}
+section.side-list .user-options li a img, section.side-list .user-options li a svg {
+  vertical-align: middle;
+}
+section.side-list .user-options li a i {
+  color: #333;
+  font-size: 20px;
+  vertical-align: middle;
+}
+section.side-list .user-options li a svg.fill path {
+  stroke: #333;
+}
+section.side-list .user-options li a.user img {
+  width: 35px;
+  height: 35px;
+}
+section.side-list .search {
+  padding: 20px;
+}
+section.side-list .search label {
+  background-color: #F4F4F4;
+  line-height: 40px;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 0 10px;
+  width: 100%;
+}
+section.side-list .search label i {
+  vertical-align: middle;
+  color: #1D2F38;
+}
+section.side-list .search label input {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  border: 0;
+  border-radius: 30px;
+  font-family: "noto_regular";
+  background: #f4f4f4;
+  color: #555;
+  width: calc(100% - 30px);
+}
+section.side-list ul {
+  list-style-type: none;
+  width: 100%;
+}
+section.side-list ul li {
+  display: block;
+  direction: rtl;
+  text-align: right;
+}
+section.side-list ul li a {
+  display: block;
+  line-height: 60px;
+  padding: 0 20px;
+  color: #333;
+  font-family: "noto_regular";
+  font-size: 14px;
+  transition: background 0.3s;
+}
+section.side-list ul li a:hover {
+  background: #f5f5f5;
+}
+section.side-list ul li a img, section.side-list ul li a svg {
+  vertical-align: middle;
+}
+section.side-list ul li a svg.fill path {
+  stroke: #333;
+}
+section.header {
+  direction: rtl;
+  background-color: #1D2F38;
+  height: 60px;
+  line-height: 60px;
+  display: flex;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+section.header .logo {
+  flex-shrink: 0;
+}
+@media screen and (max-width: 1040px) {
+  section.header .logo {
+    flex-shrink: 1;
+    width: 100%;
+  }
+}
+section.header .logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+section.header .search {
+  flex-shrink: 0;
+  padding: 0 20px;
+}
+@media screen and (max-width: 1040px) {
+  section.header .search {
+    display: none;
+  }
+}
+section.header .search label {
+  background-color: #FFF;
+  line-height: 40px;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 0 10px;
+  max-width: 200px;
+}
+section.header .search label i {
+  vertical-align: middle;
+  color: #1D2F38;
+}
+section.header .search label input {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  border: 0;
+  border-radius: 30px;
+  font-family: "noto_regular";
+  color: #555;
+  width: calc(100% - 30px);
+}
+section.header .list {
+  width: 100%;
+}
+@media screen and (max-width: 1040px) {
+  section.header .list {
+    display: none;
+  }
+}
+section.header .list ul {
+  list-style-type: none;
+}
+section.header .list ul li {
+  margin-left: 20px;
+  display: inline-block;
+}
+section.header .list ul li:last-child {
+  margin-left: 0;
+}
+section.header .list ul li a {
+  display: block;
+  line-height: 60px;
+  color: #FFF;
+  font-family: "noto_regular";
+  font-size: 14px;
+}
+section.header .list ul li a img, section.header .list ul li a svg {
+  vertical-align: middle;
+}
+section.header .list ul li a svg.fill path {
+  stroke: #FFF;
+}
+section.header .user {
+  flex-shrink: 0;
+}
+section.header .user li {
+  display: inline-block;
+  margin: 0 10px;
+}
+section.header .user li.menu-toggle {
+  display: none;
+}
+@media screen and (max-width: 1040px) {
+  section.header .user li.menu-toggle {
+    display: inline-block;
+  }
+}
+section.header .user li a {
+  display: inline-block;
+  line-height: 30px;
+}
+section.header .user li a img, section.header .user li a svg {
+  vertical-align: middle;
+}
+section.header .user li a i {
+  color: #FFF;
+  font-size: 20px;
+  vertical-align: middle;
+}
+section.header .user li a svg.fill path {
+  stroke: #FFF;
+}
+section.header .user li a.user {
+  border: 2px #FFF solid;
+  border-radius: 50%;
+  width: 39px;
+  heigth: 35px;
+}
+section.header .user li a.user img {
+  width: 35px;
+  height: 35px;
+}
+@media screen and (max-width: 400px) {
+  section.header .user li.hide-sm {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

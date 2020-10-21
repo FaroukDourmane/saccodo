@@ -1,0 +1,63 @@
+@import "variables.sass"
+
+.menu_widget
+  position: absolute
+  background: #FFF
+  list-style: none
+  margin: 0
+  left: 0
+  border-radius: 10px
+  top: calc(100% + 10px)
+  box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.1)
+  min-width: 100px
+  visibility: hidden
+  opacity: 0
+  z-index: -1
+  transition: 0.3s
+  &.active
+    visibility: visible
+    opacity: 1
+    z-index: 2
+  li
+    a
+      display: block
+      line-height: 40px
+      min-width: 100%
+      width: max-content !important
+      text-align: right !important
+      padding: 0 20px
+      font-family: $noto_regular !important
+      font-size: 13px !important
+      transition: background 0.3s
+      border-bottom: 1px #f9f9f9 solid
+      color: #555
+      border-radius: 0 !important
+      &:hover
+        background: #f9f9f9
+      svg
+        vertical-align: -2px
+        margin-left: 5px
+        path
+          fill: #555
+      &.delete
+        color: #ef6666
+        &:hover
+          background: rgba(#ef6666, 5%)
+        svg
+          path
+            fill: #ef6666
+    &:first-child
+      a
+        border-radius: 10px 10px 0 0 !important
+    &:last-child
+      a
+        border-radius: 0 0 10px 10px !important
+        border-bottom: 0
+
+@keyframes pop
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)

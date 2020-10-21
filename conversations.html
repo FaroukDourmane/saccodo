@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css?v=4">
+
+    <!-- Chat page style -->
+    <link rel="stylesheet" href="assets/css/chat.css?v=2">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+<!-- Header start -->
+    <!-- Side list -->
+    <section class="side-list">
+        <ul class="user-options">
+            <li>
+                <a href="#">
+                    <!-- Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell fill"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!-- Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle ml-1 fill"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="user">
+                    <img src="assets/img/avatar.png" />
+                </a>
+            </li>
+        </ul>
+
+        <div class="search">
+            <form action="">
+                <label>
+                    <i class="fas fa-search mr-2"></i>
+                    <input type="search" name="search" placeholder="بحث" />
+                </label>
+            </form>
+        </div>
+
+        <ul>
+            <li>
+                <a href="#">
+                    <!-- Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mb-1 ml-1"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>                    حسابي
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!-- Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home mb-1 ml-1"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>                    الرئيسية
+                </a>
+            </li>
+            <li> <a href="#"> إكتشف الجزائر </a> </li>
+            <li> <a href="#"> منازل </a> </li>
+            <li> <a href="#"> نشاطات </a> </li>
+            <li> <a href="#"> الأعضاء </a> </li>
+        </ul>
+
+    </section>
+
+    <!-- Header section -->
+    <section class="header">
+        <!-- Logo -->
+        <div class="logo"> <img src="assets/img/logo.png" alt="Saccodo" /> </div>
+
+        <!-- Seach -->
+        <div class="search">
+            <form action="">
+                <label>
+                    <i class="fas fa-search mr-2"></i>
+                    <input type="search" name="search" placeholder="بحث" />
+                </label>
+            </form>
+        </div>
+
+        <!-- List -->
+        <div class="list">
+            <ul>
+                <li>
+                    <a href="#">
+                        <!-- Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mb-1 ml-1"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>                        حسابي
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <!-- Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home mb-1 ml-1"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>                        الرئيسية
+                    </a>
+                </li>
+                <li> <a href="#"> إكتشف الجزائر </a> </li>
+                <li> <a href="#"> منازل </a> </li>
+                <li> <a href="#"> نشاطات </a> </li>
+                <li> <a href="#"> الأعضاء </a> </li>
+            </ul>
+        </div>
+
+        <!-- User -->
+        <div class="user">
+            <ul>
+                <li class="hide-sm">
+                    <a href="#">
+                        <!-- Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell fill"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </a>
+                </li>
+                <li class="hide-sm">
+                    <a href="#">
+                        <!-- Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle ml-1 fill"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a>
+                </li>
+                <li class="hide-sm">
+                    <a href="#" class="user">
+                        <img src="assets/img/avatar.png" />
+                    </a>
+                </li>
+                <li class="menu-toggle">
+                    <a href="#" class="toggle-side-menu">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- END OF : Header section -->
+<!-- Header End -->
+
+    <!-- Chat page -->
+    <section class="chat-container">
+        <!-- Conversations container -->
+        <section class="conversations-wrapper">
+            <div class="top-options">
+                <button type="button" class="close-convos-bar">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="heading">
+                <h1>المحادثات</h1>
+                <a href="#" class="add"> إنشاء محادثة +</a>
+            </div>
+
+            <div class="convo-search">
+                <form action="">
+                    <label for="">
+                        <input type="text" placeholder="البحث في الرسائل" />
+                        <i class="fas fa-search mr-2"></i>
+                    </label>
+                </form>
+            </div>
+
+            <div class="conversations">
+                <!-- Conversation -->
+                <div class="convo">
+                    <div class="avatar"> <img src="https://api.adorable.io/avatars/40/abott@adorable.png" /> </div>
+                    <div class="content">
+                        <div class="top">
+                            <h1>Klavdia Dedova</h1>
+                            <span>04:03</span>
+                        </div>
+                        <p>وبيك يعيشك بنتي حبيت نسقسيك على البيت اللي راكي حاطة عليه البيبليكاسيون …</p>
+                    </div>
+                </div>
+                <!-- END OF : Conversation -->
+
+                <!-- Conversation -->
+                <div class="convo active">
+                    <div class="avatar"> <img src="https://api.adorable.io/avatars/40/abott@adorable.png" /> </div>
+                    <div class="content">
+                        <div class="top">
+                            <h1>Klavdia Dedova</h1>
+                            <span>04:03</span>
+                        </div>
+                        <p>وبيك يعيشك بنتي حبيت نسقسيك على البيت اللي راكي حاطة عليه البيبليكاسيون …</p>
+                    </div>
+                </div>
+                <!-- END OF : Conversation -->
+
+                <!-- Conversation -->
+                <div class="convo">
+                    <div class="avatar"> <img src="https://api.adorable.io/avatars/40/abott@adorable.png" /> </div>
+                    <div class="content">
+                        <div class="top">
+                            <h1>Klavdia Dedova</h1>
+                            <span>04:03</span>
+                        </div>
+                        <p>وبيك يعيشك بنتي حبيت نسقسيك على البيت اللي راكي حاطة عليه البيبليكاسيون …</p>
+                    </div>
+                </div>
+                <!-- END OF : Conversation -->
+
+                <!-- Conversation -->
+                <div class="convo">
+                    <div class="avatar"> <img src="https://api.adorable.io/avatars/40/abott@adorable.png" /> </div>
+                    <div class="content">
+                        <div class="top">
+                            <h1>Klavdia Dedova</h1>
+                            <span>04:03</span>
+                        </div>
+                        <p>وبيك يعيشك بنتي حبيت نسقسيك على البيت اللي راكي حاطة عليه البيبليكاسيون …</p>
+                    </div>
+                </div>
+                <!-- END OF : Conversation -->
+
+                <!-- Conversation -->
+                <div class="convo">
+                    <div class="avatar"> <img src="https://api.adorable.io/avatars/40/abott@adorable.png" /> </div>
+                    <div class="content">
+                        <div class="top">
+                            <h1>Klavdia Dedova</h1>
+                            <span>04:03</span>
+                        </div>
+                        <p>وبيك يعيشك بنتي حبيت نسقسيك على البيت اللي راكي حاطة عليه البيبليكاسيون …</p>
+                    </div>
+                </div>
+                <!-- END OF : Conversation -->
+
+                <!-- Conversation -->
+                <div class="convo">
+                    <div class="avatar"> <img src="https://api.adorable.io/avatars/40/abott@adorable.png" /> </div>
+                    <div class="content">
+                        <div class="top">
+                            <h1>Klavdia Dedova</h1>
+                            <span>04:03</span>
+                        </div>
+                        <p>وبيك يعيشك بنتي حبيت نسقسيك على البيت اللي راكي حاطة عليه البيبليكاسيون …</p>
+                    </div>
+                </div>
+                <!-- END OF : Conversation -->
+            </div>
+        </section>
+
+        <!-- Chat content -->
+        <section class="chat-content">
+            <div class="content">
+                <!-- info bar : Fixed -->
+                <div class="info-bar">
+                    <div class="name">
+                        <h1> Chineze Afamefuna </h1>
+                        <a href="#">@chinezeAf</a>
+                    </div>
+
+                    <div class="options">
+                        <button>
+                            <i class="fas fa-cog"></i>
+                        </button>
+
+                        <button type="button" class="open-user-info">
+                            <i class="fas fa-list"></i>
+                        </button>
+
+                        <button class="open-convos-bar">
+                            <i class="fas fa-user-friends"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- Conversation (Messages) -->
+                <div class="messages-container">
+
+                    <!-- Use the "received" class for received messages -->
+                    <section id="" class="message-group received">
+                        <div class="avatar"> <img src="https://api.adorable.io/avatars/40/abott@adorable.png" /> </div>
+                        <section class="messages-list">
+                            <!-- Message -->
+                            <div class="message">
+                                <p>السلام عليكم</p>
+                                <span class="time">19:58</span>
+                            </div>
+                        </section>
+                    </section>
+
+                    <!-- Use the "me" class for sent messages -->
+                    <section id="" class="message-group me">
+                        <!-- Message group -->
+                        <div class="message">
+                            <p>وعليكم السلام عمو تفضل</p>
+                            <span class="time">19:58</span>
+                        </div>
+                        <!-- END OF : Message group -->
+                    </section>
+
+
+                    <!-- Use the "received" class for received messages -->
+                    <section id="" class="message-group received">
+                        <div class="avatar"> <img src="https://api.adorable.io/avatars/40/abott@adorable.png" /> </div>
+                        <section class="messages-list">
+                            <!-- Message -->
+                            <div class="message">
+                                <p>وبيك يعيشك بنتي حبيت نسقسيك على البيت اللي راكي حاطة عليه البيبليكاسيون</p>
+                                <span class="time">19:58</span>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="message">
+                                <p>تاع تيبازة اللي راكي حاطاتو بسبعميات ألف لليلة</p>
+                                <span class="time">19:58</span>
+                            </div>
+                        </section>
+                    </section>
+
+                    <!-- Use the "me" class for sent messages -->
+                    <section id="" class="message-group me">
+                        <!-- Message group -->
+                        <div class="message">
+                            <p>ايه عمو هذاك منزل تاعي تفضل</p>
+                            <span class="time">19:58</span>
+                        </div>
+                        <!-- END OF : Message group -->
+                    </section>
+
+                    <!-- Use the "received" class for received messages -->
+                    <section id="" class="message-group received">
+                        <div class="avatar"> <img src="https://api.adorable.io/avatars/40/abott@adorable.png" /> </div>
+                        <section class="messages-list">
+                            <!-- Message -->
+                            <div class="message">
+                                <p>شوفي يا بنتي انا مانيش عارف كيفاه نريزارفي في السيت اذا تقدري تفهميني برك</p>
+                                <span class="time">19:58</span>
+                            </div>
+                        </section>
+                    </section>
+
+                    <!-- Use the "me" class for sent messages -->
+                    <section id="" class="message-group me">
+                        <!-- Message group -->
+                        <div class="message">
+                            <p>ايه عمو هذاك منزل تاعي تفضل</p>
+                            <span class="time">19:58</span>
+                        </div>
+                        <!-- END OF : Message group -->
+                    </section>
+                </div>
+            </div>
+
+            <div class="bottom-bar">
+                <form action="">
+                    <div class="input-container">
+                        <label>
+                            <input type="text" name="message" placeholder="رسالة جديدة" />
+                        </label>
+                        <label class="custom-file" for="file">
+                            <input type="file" name="file" id="file" />
+                            <span><i class="fa fa-paperclip"></i></span>
+                        </label>
+                    </div>
+
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Chat options -->
+        <section class="chat-options">
+            <!-- User informations -->
+            <div class="user-info">
+                <div class="top-options">
+                    <button type="button" class="close-user-info">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                <img class="user-avatar" src="https://api.adorable.io/avatars/140/abott@adorable.png" alt="" />
+                <h1>Chineze Afamefuna</h1>
+                <a href="#" class="profile">
+                    <i class="fas fa-user-circle"></i> عرض الملف
+                </a>
+            </div>
+
+            <!-- Shared pictures -->
+            <div class="shared-pictures">
+                <div class="heading">
+                    <h1>الصور المشاركة</h1>
+                    <a href="#">
+                        < عرض الكل </a>
+                </div>
+
+                <div class="images-wrapper">
+                    <img src="https://picsum.photos/90/90" alt="" />
+                    <img src="https://picsum.photos/90/90" alt="" />
+                    <img src="https://picsum.photos/90/90" alt="" />
+                    <img src="https://picsum.photos/90/90" alt="" />
+                    <img src="https://picsum.photos/90/90" alt="" />
+                    <img src="https://picsum.photos/90/90" alt="" />
+                    <img src="https://picsum.photos/90/90" alt="" />
+                    <img src="https://picsum.photos/90/90" alt="" />
+                    <img src="https://picsum.photos/90/90" alt="" />
+                </div>
+            </div>
+
+        </section>
+    </section>
+</body>
+
+<footer>
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/chat.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</footer>
+
+</html>

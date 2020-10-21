@@ -1,0 +1,804 @@
+@import "variables.sass"
+
+body
+  background: #f9f9f9
+
+.me-container
+  direction: rtl
+  padding: 10px
+  border-radius: 10px
+  background: #FFF
+  display: none
+  position: fixed
+  top: 60px
+  z-index: 2
+  box-shadow: 0 3px 20px 0 rgba(0,0,0,0.05)
+  border-radius: 0
+  width: 100%
+  @media screen and (max-width: 900px)
+    display: block
+  h1
+    font-family: $noto_bold
+    color: #333
+    font-size: 18px
+    margin: 0
+    line-height: 40px
+    .toggler
+      border-radius: 10px
+      display: inline-block
+      width: 40px
+      text-align: center
+      background: #f1f1f1
+      margin-left: 10px
+      cursor: pointer
+    img
+      vertical-align: middle
+      width: 40px
+      height: 40px
+      border-radius: 50%
+.social-container
+  max-width: 1250px
+  margin: 0 auto
+  border-radius: 10px
+  display: grid
+  grid-template-columns: 300px 1fr 300px
+  grid-template-rows: auto auto auto
+  grid-template-areas: "leftSide feed profile"
+  grid-gap: 10px
+  margin-bottom: 20px
+  @media screen and (max-width: 1040px)
+    grid-template-columns: 1fr 1fr 300px
+    grid-template-rows: 1fr auto
+    grid-template-areas: "leftSide leftSide profile" "feed feed profile"
+    grid-gap: 30px
+  @media screen and (max-width: 900px)
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 1fr auto
+    grid-template-areas: "leftSide leftSide" "feed feed"
+    grid-gap: 10px
+    margin-top: 80px
+  section
+    &#leftSide
+      grid-area: leftSide
+      @media screen and (max-width: 1040px)
+        padding-left: 20px
+      .recommend-container
+        position: fixed
+        left: 15px
+        border-radius: 10px
+        top: 70px
+        width: 300px
+        max-height: calc(100% - 90px)
+        overflow: auto
+        @media screen and (max-width: 1040px)
+          position: relative
+          top: 0
+          left: 0
+          width: 100%
+        .container
+          background: #FFF
+          padding: 20px
+          margin-bottom: 20px
+          direction: rtl
+          border-radius: 10px
+          &.transparent
+            background: transparent
+          .heading
+            display: flex
+            line-height: 40px
+            margin-bottom: 20px
+            h1
+              width: 100%
+              color: #555
+              font-family: $noto_bold
+              font-size: 15px
+              margin: 0
+              padding: 0
+            .buttons
+              flex-shrink: 0
+              a
+                color: #1EBDB6
+                font-family: $noto_regular
+                font-size: 12px
+                svg
+                  vertical-align: middle
+                  width: 20px
+          .persons-wrapper
+            @media screen and (max-width: 1040px)
+              display: flex
+              @media screen and (max-width: 550px)
+                flex-direction: column
+            .person
+              display: flex
+              align-items: center
+              border-bottom: 1px #f1f1f1 solid
+              @media screen and (max-width: 1040px)
+                flex-direction: column
+                border-bottom: 0
+                background: #f9f9f9
+                padding: 10px
+                border-radius: 10px
+                margin-left: 5px
+              @media screen and (max-width: 550px)
+                flex-direction: row
+                padding: 0
+                border-radius: 0
+                margin-left: 0
+                border-bottom: 1px #f1f1f1 solid
+                background: #FFF
+              &:last-child
+                border-bottom: 0
+              .avatar
+                flex-shrink: 0
+                img
+                  width: 40px
+                  height: 40px
+                  border-radius: 50%
+              .infos
+                width: 100%
+                padding-right: 5px
+                h5
+                  font-family: Helvetica
+                  color: #555
+                  margin: 0
+                span
+                  font-family: $noto_regular
+                  font-size: 12px
+                  color: #777
+              .options
+                flex-shrink: 0
+                a
+                  &.add
+                    display: inline-block
+                    line-height: 35px
+                    width: 35px
+                    text-align: center
+                    border-radius: 5px
+                    border: 1px #157FFB solid
+                    color: #157FFB
+                    transition: background 0.3s
+                    &:hover
+                      background: #157FFB
+                      color: #FFF
+          .interest-wrapper
+            display: grid
+            grid-template-rows: 200px 200px
+            grid-template-columns: 1fr 1fr
+            grid-gap: 10px
+            .item
+              width: 100%
+              height: 100%
+              background: #333
+              border-radius: 10px
+              background-position: center !important
+              background-size: cover !important
+              position: relative
+              &::after
+                content: ""
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                border-radius: 10px
+                background: #000
+                opacity: 0.5
+                z-index: 1
+                transition: opacity 0.3s
+              span.title
+                position: absolute
+                top: 10px
+                right: 10px
+                color: #FFF
+                z-index: 2
+                font-size: 13px
+                font-family: $noto_bold
+                max-width: 100%
+              span.rating
+                position: absolute
+                bottom: 10px
+                right: 10px
+                z-index: 2
+                color: #FFF
+                font-family: Helvetica
+                font-size: 13px
+    &#profile
+      grid-area: profile
+      position: relative
+      .profile-container
+        position: fixed
+        right: 15px
+        border-radius: 10px
+        top: 70px
+        width: 300px
+        max-height: calc(100% - 90px)
+        background: #FFF
+        overflow: auto
+        direction: rtl
+        @media screen and (max-width: 900px)
+          top: 20px
+          right: -100%
+          transition: 0.3s
+          &.active
+            right: 10px
+            z-index: 99
+            max-height: calc(100% - 50px)
+        .user-info
+          text-align: center
+          padding: 20px
+          border-bottom: 1px #f1f1f1 solid
+          img.avatar
+            width: 120px
+            height: 120px
+            border-radius: 50%
+            display: block
+            margin: 0 auto
+            margin-bottom: 20px
+          h1
+            margin: 0
+            font-family: Helvetica
+            color: #333
+          .tag
+            color: #1CBBB5
+            font-family: Helvetica
+            font-size: 12px
+        .user-stats
+          display: flex
+          justify-content: center
+          text-align: center
+          align-items: center
+          border-bottom: 1px #f1f1f1 solid
+          .side
+            width: 100%
+            &:first-child
+              border-left: 1px #f1f1f1 solid
+            h2
+              margin: 0
+              font-family: Helvetica
+              color: #333
+            span
+              font-family: $noto_regular
+              font-size: 13px
+              color: #777
+        .user-links, .user-options
+          padding: 10px 20px
+          a
+            display: block
+            line-height: 40px
+            font-family: $noto_bold
+            font-size: 12px
+            color: #333
+            margin-bottom: 5px
+            border-radius: 5px
+            background: #f9f9f9
+            &:hover
+              background: #f1f1f1
+            &.active
+              background: rgba(#26C6C1, 0.2)
+            .icon
+              display: inline-block
+              padding: 2px
+              //background: #f9f9f9
+              width: 40px
+              text-align: center
+              border-radius: 5px
+              margin-left: 10px
+              font-size: 20px
+              &#explore
+                color: #26C6C1
+              &#messages
+                color: #4DA1F4
+              &#bookmark
+                color: #F7B500
+              &#images
+                color: #7C57DA
+    &#feed
+      grid-area: feed
+      @media screen and (max-width: 1040px)
+        padding-left: 20px
+      @media screen and (max-width: 900px)
+        padding-left: 20px
+      .media-container
+        width: 100%
+        .write-container
+          background: #FFF
+          border-radius: 10px
+          margin-bottom: 20px
+          box-shadow: -10px 10px 20px 0 rgba(0,0,0,0.01)
+          direction: rtl
+          .heading
+            padding: 20px
+            border-bottom: 1px #f1f1f1 solid
+            h1
+              margin: 0
+              font-family: $noto_bold
+              color: #333
+          .newPostForm
+            .reactions
+              padding: 10px
+              label
+                display: inline-block
+                cursor: pointer
+                margin-left: 5px
+                margin-bottom: 5px
+                &:last-child
+                  margin-left: 0
+                span
+                  font-family: $noto_bold
+                  font-size: 11px
+                  color: #333
+                  background: #f9f9f9
+                  line-height: 40px
+                  padding: 0 10px
+                  border-radius: 20px
+                  display: inline-block
+                  min-width: 100px
+                  text-align: center
+                  svg
+                    vertical-align: -4px
+                    height: 15px
+                    margin-left: 5px
+                input
+                  display: none
+                  &:checked
+                    & + span
+                      background: #ffdfa2
+            .write-container
+              padding: 20px
+              display: flex
+              margin: 0
+              .avatar
+                width: 50px
+                flex-shrink: 0
+                img
+                  width: 50px
+                  height: 50px
+                  border-radius: 50%
+              .textarea
+                width: 100%
+                padding-right: 20px
+                label
+                  background: #f5f5f5
+                  display: block
+                  border-radius: 10px
+                  position: relative
+                  width: 100%
+                  max-width: 100%
+                  &::after
+                    content: ""
+                    position: absolute
+                    top: 20px
+                    right: -10px
+                    border-bottom: 10px transparent solid
+                    border-left: 10px #f5f5f5 solid
+                    border-top: 10px transparent solid
+                  textarea
+                    background: transparent
+                    width: 100%
+                    min-width: 100%
+                    max-width: 100%
+                    height: 100px
+                    min-height: 100px
+                    border: 0
+                    border-radius: 10px
+                    outline: 0
+                    padding: 20px
+                    font-family: $noto_bold
+                    font-size: 13px
+                    color: #333
+                    resize: none !important
+            .media-inputs
+              padding: 0 10px 10px 20px
+              text-align: left
+              label
+                display: inline-block
+                cursor: pointer !important
+                input
+                  display: none
+                span
+                  line-height: 40px
+                  padding: 0px 20px
+                  font-family: $noto_bold
+                  font-size: 11px
+                  color: #333
+                  background: #f9f9f9
+                  border-radius: 5px
+                  display: block
+                  svg
+                    vertical-align: -6px
+                    margin-left: 5px
+                    height: 20px
+                  &#photos
+                    background: #e8ffe7b3
+                    color: #328e2e
+                  &#videos
+                    background: #4da1f417
+                    color: #4da1f4
+            .submit-container
+              padding: 10px 20px
+              text-align: left
+              border-top: 1px #f1f1f1 solid
+              button[type="submit"]
+                display: inline-block
+                background: lighten(#309afd, 5%)
+                line-height: 50px
+                padding: 0 20px
+                border-radius: 10px
+                font-family: $noto_bold
+                cursor: pointer !important
+                border: 0
+                outline: 0
+                color: #FFF
+                font-size: 12px
+                width: 100%
+                text-align: center
+                transition: background 0.3s
+                &:hover
+                  background: #309afd
+        .post-container
+          background: #FFF
+          border-radius: 10px
+          margin-bottom: 20px
+          box-shadow: -10px 10px 20px 0 rgba(0,0,0,0.01)
+          .post-header
+            display: flex
+            padding: 10px
+            direction: rtl
+            align-items: center
+            border-bottom: 1px #f1f1f1 solid
+            border-radius: 10px 10px 0 0
+            .avatar
+              flex-shrink: 0
+              img
+                width: 50px
+                height: 50px
+                border-radius: 50%
+            .post-infos
+              width: 100%
+              padding: 0 10px
+              .name
+                h1
+                  font-family: Helvetica
+                  font-size: 14px
+                  font-weight: bold
+                  margin: 0
+                  color: #333
+                  a
+                    color: #333
+                .date
+                  font-family: $noto_regular
+                  font-size: 12px
+                  color: #777
+            .options
+              flex-shrink: 0
+              ul
+                list-style: none
+                li
+                  position: relative
+                  a
+                    display: block
+                    width: 40px
+                    height: 40px
+                    line-height: 40px
+                    color: #333
+                    text-align: center
+                    &.toggler
+                      background: #FFF
+                      border-radius: 10px
+                      transition: background 0.3s
+                      &:hover
+                        background: #f9f9f9
+                    svg
+                      vertical-align: middle
+                      path
+                        fill: #333
+          .post-content
+            p
+              direction: rtl
+              font-family: $noto_regular
+              color: #333
+              font-size: 13px
+              padding: 20px
+            .media
+              img
+                width: 100%
+            .stats-container
+              line-height: 40px
+              display: flex
+              direction: rtl
+              padding: 0 20px
+              .reactions
+                width: 100%
+                span
+                  font-family: Helvetica
+                  color: #333
+                ul
+                  list-style: none
+                  margin: 0
+                  padding: 0
+                  display: inline-block
+                  li
+                    display: inline-block
+                    width: 25px
+                    height: 25px
+                    line-height: 25px
+                    border-radius: 50%
+                    text-align: center
+                    border: 3px #FFF solid
+                    box-sizing: content-box
+                    margin-right: -15px
+                    &:first-child
+                      margin-right: 0
+                    &#heart
+                      background: #F8153B
+                    &#likes
+                      background: #2F9AFD
+                    svg
+                      height: 15px
+                      vertical-align: middle
+                      path
+                        fill: #FFF
+              .stats
+                flex-shrink: 0
+                span
+                  font-family: Helvetica
+                  display: inline-block
+                  line-height: 30px
+                  padding: 0 10px
+                  color: #555
+                  font-size: 14px
+                  //font-weight: bold
+                  &:first-child
+                    border-left: 1px #DDD solid
+                  svg
+                    vertical-align: middle
+                    height: 17px
+                    margin-left: 2px
+                    path
+                      fill: #555
+            .post-tools
+              display: flex
+              direction: rtl
+              line-height: 50px
+              border-top: 1px #f1f1f1 solid
+              border-bottom: 1px #f1f1f1 solid
+              div
+                width: 100%
+                position: relative
+              a
+                display: block
+                width: 100%
+                text-align: center
+                font-family: $noto_bold
+                font-size: 12px
+                color: #333
+                //border-radius: 10px
+                transition: background 0.3s
+                &:hover
+                  background: #f9f9f9
+                svg
+                  height: 17px
+                  vertical-align: -5px
+                  margin-left: 5px
+                  path
+                    fill: #333
+                &.like
+                  &.active
+                    color: #2F9AFD
+                    animation-name: pop
+                    animation-duration: 0.3s
+                    animation-timing-function: ease-in-out
+                    svg
+                      path
+                        fill: #2F9AFD
+              .reactions-container
+                position: absolute
+                bottom: 100%
+                left: 50%
+                transform: translateX(-50%)
+                box-shadow: -2px 2px 20px 0 rgba(0,0,0,0.1)
+                background: #FFF
+                border-radius: 30px
+                //min-width: 100%
+                z-index: -2
+                width: auto
+                padding: 0 10px
+                opacity: 0
+                visibility: hidden
+                transition: 0.3s
+                &.active
+                  opacity: 1
+                  visibility: visible
+                  z-index: 2
+                  bottom: calc(100% + 10px)
+                a
+                  display: inline-block
+                  width: 45px
+                  height: 45px
+                  line-height: 45px
+                  border-radius: 50%
+                  svg
+                    margin: 0
+                  &.heart
+                    svg
+                      path
+                        fill: #F8153B
+                    &:hover
+                      background: rgba(#F8153B, 0.2)
+                  &.like
+                    svg
+                      path
+                        fill: #2F9AFD
+                    &:hover
+                      background: rgba(#2F9AFD, 0.2)
+            .user-comment
+              display: flex
+              direction: rtl
+              padding: 20px
+              img
+                width: 50px
+                height: 50px
+                border-radius: 50%
+                flex-shrink: 0
+              form
+                width: 100%
+                display: flex
+                padding-right: 20px
+                input,button
+                  display: inline-block
+                  line-height: 50px
+                  border: 0
+                  outline: 0
+                  font-family: $noto_regular
+                  border-radius: 30px
+                  padding: 0 20px
+                  font-size: 13px
+                input
+                  background: #F1F1F1
+                  width: 100%
+                  margin-left: 10px
+                  color: #333
+                button
+                  flex-shrink: 0
+                  background: #2F9AFD
+                  color: #FFF
+                  cursor: pointer
+            .post-comments
+              padding: 20px
+              text-align: center
+              a.more
+                display: inline-block
+                font-family: $noto_regular
+                font-size: 13px
+                color: #1EBDB6
+                margin-bottom: 20px
+              .comment-container
+                direction: rtl
+                .comment
+                  background: rgba(#f9f9f9, 0.8)
+                  border-radius: 10px
+                  padding-bottom: 10px
+                  margin-bottom: 10px
+                  &:last-child
+                    margin-bottom: 0
+                  .wrapper
+                    display: flex
+                    padding: 10px
+                    .avatar
+                      img
+                        width: 50px
+                        height: 50px
+                        border-radius: 50%
+                    .content
+                      text-align: right
+                      padding-right: 10px
+                      p
+                        padding: 0
+                      .name
+                        h1
+                          margin: 0
+                          font-family: $noto_bold
+                          color: #333
+                        span
+                          font-family: $noto_regular
+                          color: #777
+                          font-size: 13px
+                      .tools
+                        padding: 10px 0
+                        a
+                          color: #333
+                          font-family: $noto_regular
+                          font-size: 13px
+                          display: inline-block
+                          line-height: 40px
+                          padding: 0 20px
+                          background: rgba(#f1f1f1, 0.5)
+                          border-radius: 30px
+                          &:hover
+                            background: #f1f1f1
+                          &#like
+                            &.active
+                              background: rgba(#2F9AFD, 0.03)
+                              color: #2F9AFD
+                              animation-name: pop
+                              animation-duration: 0.3s
+                              animation-timing-function: ease-in-out
+                              &:hover
+                                background: rgba(#2F9AFD, 0.1)
+                              .icon
+                                svg
+                                  path
+                                    fill: #2F9AFD
+                            .text
+                              font-family: Helvetica
+                          .icon
+                            svg
+                              height: 20px
+                              vertical-align: -4px
+                  .replies-container
+                    p.title
+                      margin: 0
+                      padding: 0
+                      text-align: right
+                      padding: 0 20px
+                      line-height: 40px
+                      color: #555
+                      font-family: $noto_bold
+                      font-size: 12px
+                      svg
+                        vertical-align: -2px
+                        height: 1em
+                    .reply
+                      margin: 20px
+                      border-radius: 10px
+                      background: #FFF
+                      display: flex
+                      padding: 10px
+                      .avatar
+                        img
+                          width: 30px
+                          height: 30px
+                          border-radius: 50%
+                      .content
+                        text-align: right
+                        padding-right: 10px
+                        p
+                          padding: 0
+                        .name
+                          h1
+                            margin: 0
+                            font-family: $noto_bold
+                            color: #333
+                            font-size: 14px
+                          span
+                            font-family: $noto_regular
+                            color: #777
+                            font-size: 12px
+                        .tools
+                          padding: 10px 0
+                          a
+                            color: #333
+                            font-family: $noto_regular
+                            font-size: 13px
+                            display: inline-block
+                            line-height: 40px
+                            padding: 0 20px
+                            background: rgba(#f1f1f1, 0.5)
+                            border-radius: 30px
+                            &:hover
+                              background: #f1f1f1
+                            &#like
+                              background: rgba(#2F9AFD, 0.03)
+                              color: #2F9AFD
+                              &:hover
+                                background: rgba(#2F9AFD, 0.1)
+                              .icon
+                                svg
+                                  path
+                                    fill: #2F9AFD
+                              .text
+                                font-family: Helvetica
+                            .icon
+                              svg
+                                height: 20px
+                                vertical-align: -4px
