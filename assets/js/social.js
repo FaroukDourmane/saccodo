@@ -28,4 +28,18 @@ $(function(){
     }
   });
 
+  // Slides
+  // Skills slider
+  var nextButton_ref = $(".recommend-slider-wrapper .buttons-wrapper .right");
+  var prevButton_ref = $(".recommend-slider-wrapper .buttons-wrapper .left");
+
+  $(".recommend-slider-wrapper .slide-wrapper").slick({
+    centerMode: false,
+    slidesToShow: 3,
+    arrows: true,
+    autoWidth: true,
+    prevArrow: $(nextButton_ref),
+    nextArrow: $(prevButton_ref)
+  });
+
 });

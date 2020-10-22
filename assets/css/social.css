@@ -989,5 +989,95 @@ body {
   height: 20px;
   vertical-align: -4px;
 }
+.social-container section#feed .media-container .recommend-slider-wrapper {
+  border-radius: 10px;
+  padding: 10px 20px;
+  max-width: 630px;
+}
+@media screen and (max-width: 1040px) {
+  .social-container section#feed .media-container .recommend-slider-wrapper {
+    max-width: 690px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .social-container section#feed .media-container .recommend-slider-wrapper {
+    max-width: 100%;
+  }
+}
+.social-container section#feed .media-container .recommend-slider-wrapper h1 {
+  font-family: "noto_bold";
+  font-size: 15px;
+  color: #333;
+  text-align: right;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .buttons-wrapper {
+  text-align: left;
+  direction: ltr;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .buttons-wrapper a {
+  display: inline-block;
+  line-height: 40px;
+  width: 40px;
+  text-align: center;
+  background: #FFF;
+  border-radius: 5px;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .buttons-wrapper a svg {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .buttons-wrapper a svg path {
+  fill: #333;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .slide-wrapper .item {
+  width: 200px;
+  margin: 0 5px;
+  padding: 0;
+  outline: 0;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  transition: border 0.3s;
+  border: 1px transparent solid;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .slide-wrapper .item:hover {
+  background: #FFF;
+  border: 1px #f1f1f1 solid;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .slide-wrapper .item .hidden-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .slide-wrapper .item .img {
+  width: 100%;
+  height: 200px;
+  background-position: center !important;
+  background-size: cover !important;
+  border-radius: 10px;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .slide-wrapper .item .infos {
+  direction: rtl;
+  padding: 10px 5px;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .slide-wrapper .item .infos span {
+  display: block;
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .slide-wrapper .item .infos span.name {
+  color: #555;
+  font-size: 14px;
+  font-family: "noto_bold";
+}
+.social-container section#feed .media-container .recommend-slider-wrapper .slide-wrapper .item .infos span.location {
+  color: #2bbcb4;
+  font-size: 12px;
+  font-family: "noto_regular";
+}
 
 /*# sourceMappingURL=social.css.map */
